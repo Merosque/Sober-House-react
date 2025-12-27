@@ -44,7 +44,7 @@ export const Burger = styled("div")`
   display: none;
 
   svg {
-    fill: #2e186a;
+    fill:  #176FAE;
   }
 `;
 
@@ -58,11 +58,12 @@ export const Menu = styled("h5")`
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+  color:  #176FAE;
 `;
 
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1.2rem;
-  color: #18216d;
+  color:  #176FAE;
   transition: color 0.2s ease-in;
   margin: 0.5rem 2rem;
 

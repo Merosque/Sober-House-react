@@ -21,7 +21,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="developer.svg"
+        icon="logo.svg"
         id="intro"
       />
       <MiddleBlock
@@ -34,7 +34,7 @@ const Home = () => {
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="graphs.svg"
+        icon="how-it-works.svg"
         id="about"
       />
       <ContentBlock
@@ -45,10 +45,11 @@ const Home = () => {
         id="mission"
       />
       <ContentBlock
-        direction="left"
+        direction="right"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="waving.svg"
+        button={ProductContent.button}
+        icon="mountain-home.svg"
         id="product"
       />
       {/*<Contact

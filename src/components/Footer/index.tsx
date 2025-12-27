@@ -1,7 +1,8 @@
-import { Row, Col } from "antd";
+import { Row, Col, Modal } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
+import { useState } from "react";
 
 import i18n from "i18next";
 import {
@@ -31,6 +32,8 @@ const Footer = ({ t }: { t: TFunction }) => {
     i18n.changeLanguage(language);
   };
 
+const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
+
   const SocialLink = ({ href, src }: SocialLinkProps) => {
     return (
       <a
@@ -51,66 +54,75 @@ const Footer = ({ t }: { t: TFunction }) => {
         <Container>
           <Row justify="space-between">
             <Col lg={10} md={10} sm={12} xs={12}>
-              <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
+              <Language>{t("Контакты")}</Language>
               <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
+                {t(`У вас есть вопросы? Свяжитесь с нами по электронной почте`)}
               </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
+              <a href="mailto:scual@bk.ru">
+                <Chat>{t(`Напишите нам`)}</Chat>
               </a>
             </Col>
             <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Policy")}</Title>
-              <Large to="/">{t("Application Security")}</Large>
-              <Large to="/">{t("Software Principles")}</Large>
+              <Title>{t("Дисклеймер")}</Title>
+              <Large
+                as="button"
+                onClick={() => setIsDisclaimerOpen(true)}
+                style={{ background: "none", border: "none", padding: 0 }}
+              >
+                {t("Важная информация")}
+              </Large>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
-              <Empty />
-              <Large to="/">{t("Support Center")}</Large>
-              <Large to="/">{t("Customer Support")}</Large>
-            </Col>
-          </Row>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Empty />
-              <Language>{t("Address")}</Language>
-              <Para>Rancho Santa Margarita</Para>
-              <Para>2131 Elk Street</Para>
-              <Para>California</Para>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
-              <Large to="/">{t("About")}</Large>
-              <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
-              <LanguageSwitchContainer>
-                <LanguageSwitch onClick={() => handleChange("en")}>
-                  <SvgIcon
-                    src="united-states.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-                <LanguageSwitch onClick={() => handleChange("es")}>
-                  <SvgIcon
-                    src="spain.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-              </LanguageSwitchContainer>
+              <Title>{t("Ссылки")}</Title>
+              <Large
+                as="a"
+                href="https://t.me/soberhouse"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("Канал Трезвого дома")}
+              </Large>
+
+              <Large
+                as="a"
+                href="https://t.me/trezvyiy_dom_izbrannoe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("Избранное чата")}
+              </Large>
+
+              <Large
+                as="a"
+                href="https://t.me/+4pnOqJdm7pg0NDYy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("Истории участников")}
+              </Large>
             </Col>
           </Row>
         </Container>
       </FooterSection>
-      <Extra>
+      <Modal
+  open={isDisclaimerOpen}
+  onCancel={() => setIsDisclaimerOpen(false)}
+  footer={null}
+  centered
+>
+  <h3>{t("Важная информация")}</h3>
+
+  <p>
+   Сообщество «Трезвый Дом» предоставляет пространство для взаимной поддержки и обмена личным опытом трезвости. Сообщество не оказывает медицинских, психотерапевтических или реабилитационных услуг.
+  </p>
+
+  <p>
+    Любая информация, высказывания и рекомендации участников отражают их личный опыт и не являются заменой профессиональной помощи.
+  </p>
+  <p>Каждый участник самостоятельно принимает решения и несёт ответственность за своё физическое и психическое состояние.</p>
+  <p>При наличии острого кризиса, суицидальных мыслей или угрозы жизни необходимо обратиться к профессиональным специалистам или в экстренные службы вашего региона.</p>
+</Modal>
+      {/*<Extra>
         <Container border={true}>
           <Row
             justify="space-between"
@@ -159,7 +171,7 @@ const Footer = ({ t }: { t: TFunction }) => {
             </FooterContainer>
           </Row>
         </Container>
-      </Extra>
+      </Extra>*/}
     </>
   );
 };

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sober-House-react/static/css/main.37ddbf14.css",
-    "main.js": "/Sober-House-react/static/js/main.db8591a5.js",
+    "main.js": "/Sober-House-react/static/js/main.0358390d.js",
     "static/js/109.ec5a9a6b.chunk.js": "/Sober-House-react/static/js/109.ec5a9a6b.chunk.js",
     "static/js/416.b927c36b.chunk.js": "/Sober-House-react/static/js/416.b927c36b.chunk.js",
     "static/js/538.7502cfce.chunk.js": "/Sober-House-react/static/js/538.7502cfce.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/614.084c75c7.chunk.js": "/Sober-House-react/static/js/614.084c75c7.chunk.js",
     "index.html": "/Sober-House-react/index.html",
     "main.37ddbf14.css.map": "/Sober-House-react/static/css/main.37ddbf14.css.map",
-    "main.db8591a5.js.map": "/Sober-House-react/static/js/main.db8591a5.js.map",
+    "main.0358390d.js.map": "/Sober-House-react/static/js/main.0358390d.js.map",
     "109.ec5a9a6b.chunk.js.map": "/Sober-House-react/static/js/109.ec5a9a6b.chunk.js.map",
     "416.b927c36b.chunk.js.map": "/Sober-House-react/static/js/416.b927c36b.chunk.js.map",
     "538.7502cfce.chunk.js.map": "/Sober-House-react/static/js/538.7502cfce.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.37ddbf14.css",
-    "static/js/main.db8591a5.js"
+    "static/js/main.0358390d.js"
   ]
 }
